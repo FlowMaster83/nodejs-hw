@@ -10,6 +10,7 @@ import authRoutes from './routes/authRoutes.js';
 import helmet from 'helmet';
 import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -22,6 +23,7 @@ app.use(cors());
 
 app.use(notesRoutes);
 app.use(authRoutes);
+app.use(userRoutes);
 
 app.use(errors());
 app.use(notFoundHandler);
